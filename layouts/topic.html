@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>{{data.fields.topic}}</title>
+</head>
+<body>
+<h1>{{data.fields.topic}}</h1>
+
+{{{marked data.fields.topicDescriptor}}}
+
+<h2>{{data.fields.quickGuide.fields.quickGuideTitle}}</h2>
+
+{{{marked data.fields.quickGuide.fields.quickGuideText}}}
+
+  <ul>
+    {{#each data.fields.subTopic }}
+      <li>
+        <h3>{{fields.subTopic}}</h3>
+        {{#if fields.subTopicDescriptor}}
+        {{{marked fields.subTopicDescriptor}}}
+        {{/if}}
+        <p><a href="{{{slugify fields.subTopic}}}">Read more</a></p>
+      </li>
+    {{/each}}
+    </ul>
+    {{content}}
+</body>
+</html>

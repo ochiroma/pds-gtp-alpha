@@ -1,0 +1,30 @@
+{
+  "name": "pds-gtp-alpha",
+  "version": "1.0.0",
+  "description": "pds-gtp-alpha",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"No test specified - force pass\" && exit 0",
+    "postinstall": "node build.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ochiroma/pds-gtp-alpha.git"
+  },
+  "author": "Onkar Chiroma",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ochiroma/pds-gtp-alpha/issues"
+  },
+  "homepage": "https://github.com/ochiroma/pds-gtp-alpha#readme",
+  "dependencies": {
+    "contentful-metalsmith": "^0.11.0",
+    "dotenv": "^4.0.0",
+    "handlebars": "^4.0.10",
+    "marked": "^0.3.6",
+    "metalsmith": "^2.3.0",
+    "metalsmith-express": "^0.1.0",
+    "metalsmith-layouts": "^1.8.1",
+    "metalsmith-markdown": "^0.2.1"
+  }
+}
