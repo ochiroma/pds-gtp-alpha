@@ -1,3 +1,6 @@
+var dotenv = require('dotenv');
+dotenv.load();
+
 var Metalsmith        = require('metalsmith');
 var handlebars        = require('handlebars');
 var layouts           = require('metalsmith-layouts');
@@ -5,6 +8,10 @@ var markdown          = require('metalsmith-markdown');
 var contentful        = require('contentful-metalsmith');
 var marked            = require('marked');
 var metalsmithExpress = require('metalsmith-express');
+var path              = require("path");
+
+
+
 
 handlebars.registerHelper("slugify", function(input) {
     var output = input.toLowerCase();
@@ -31,15 +38,10 @@ Metalsmith(__dirname)         // __dirname defined by node.js:
   .source('./src')            // source directory
   .destination('./build')     // destination directory
   .clean(true)                // clean destination before
-  // .use(contentful({ 
-  //   'access_token' : process.env.CONTENT_API_KEY,
-  //   'space_id' : process.env.CONTENT_SPACE_ID,
-  //   'host': process.env.CONTENT_API_URL
-  // }))
   .use(contentful({ 
-    'access_token' : '9affc5d65b294616590dc4d7a4219766c808fd593ded5882524b7317429c5db5',
-    'space_id' : '04pp5gayetsw',
-    'host': 'cdn.contentful.com'
+    'access_token' : process.env.CONTENT_ACCESS_TOKEN,
+    'space_id' : process.env.CONTENT_SPACE_ID,
+    'host': process.env.CONTENT_HOST
   }))
   .use(markdown())            // transpile all md into html
   .use(layouts({              // wrap layouts around html
