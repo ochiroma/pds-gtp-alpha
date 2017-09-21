@@ -15,11 +15,11 @@ The [Guide to procedure alpha](https://github.com/ochiroma/pds-gtp-alpha) requir
     ```
     cd pds-gtp-alpha
     ```
-3. Create a environment variable file (.env) and add in the following environment variables:
+3. Create a environment variable file (.env) and add in the following environment variables see .env-example for an example .env file:
     ```
-    CONTENT_API_URL:cdn.contentful.com
-	CONTENT_SPACE_ID:<content space ID>
-	CONTENT_API_KEY:<content access token>
+    CONTENT_HOST = cdn.contentful.com
+    CONTENT_SPACE_ID = <content space ID>
+    CONTENT_ACCESS_TOKEN = <content access token>
     ```
     **Remember never commit environment variables to your repository!**
 
