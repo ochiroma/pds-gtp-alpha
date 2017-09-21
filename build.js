@@ -1,5 +1,9 @@
-var dotenv = require('dotenv');
-dotenv.load();
+if (process.env.NODE_ENV !== 'production') {
+  var dotenv = require('dotenv');
+  dotenv.load();
+}
+
+console.log(process.env.NODE_ENV);
 
 var Metalsmith        = require('metalsmith');
 var handlebars        = require('handlebars');
