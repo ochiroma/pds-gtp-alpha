@@ -3,8 +3,6 @@ if (process.env.NODE_ENV !== 'production') {
   dotenv.load();
 }
 
-console.log(process.env.NODE_ENV);
-
 var Metalsmith        = require('metalsmith');
 var handlebars        = require('handlebars');
 var layouts           = require('metalsmith-layouts');
@@ -53,6 +51,7 @@ Metalsmith(__dirname)         // __dirname defined by node.js:
   }))
   .use(metalsmithExpress({
     liveReload: false,
+    port: process.env.PORT || 3000
     }))
   .build(function(err) {      // build process
     if (err) throw err;       // error handling is required
