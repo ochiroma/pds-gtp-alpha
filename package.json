@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"No test specified - force pass\" && exit 0",
-    "postinstall": "node build.js"
+    "postinstall": "node build.js",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",

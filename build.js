@@ -11,9 +11,6 @@ var contentful        = require('contentful-metalsmith');
 var marked            = require('marked');
 var path              = require("path");
 
-const express = require('express');
-const app = express();
-
 
 handlebars.registerHelper("slugify", function(input) {
     var output = input.toLowerCase();
@@ -56,12 +53,4 @@ Metalsmith(__dirname)         // __dirname defined by node.js:
   .build(function(err) {      // build process
     if (err) throw err;       // error handling is required
   });
-
-
-
-app.use(express.static('build'));
-
-app.listen(process.env.PORT || 3000, function () {
-  console.log('App started :)')
-})
 
