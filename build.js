@@ -9,7 +9,6 @@ var layouts           = require('metalsmith-layouts');
 var markdown          = require('metalsmith-markdown');
 var contentful        = require('contentful-metalsmith');
 var marked            = require('marked');
-var metalsmithExpress = require('metalsmith-express');
 var path              = require("path");
 
 const express = require('express');
