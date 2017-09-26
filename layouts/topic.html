@@ -1,8 +1,12 @@
 {{> header title=data.fields.topic }}
-<h1>{{data.fields.topic}}</h1>
+<div class="section--primary">
+  <div class="container">
+    <h1>{{data.fields.topic}}</h1>
+    {{{marked data.fields.topicDescriptor}}}
+  </div>
+</div>
 
-{{{marked data.fields.topicDescriptor}}}
-
+<div class="container">
 <h2>{{data.fields.quickGuide.fields.quickGuideTitle}}</h2>
 
 {{{marked data.fields.quickGuide.fields.quickGuideText}}}
@@ -19,4 +23,5 @@
     {{/each}}
     </ul>
     {{content}}
+</div>
 {{> footer}}
