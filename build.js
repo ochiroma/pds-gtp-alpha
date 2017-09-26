@@ -10,8 +10,10 @@ var markdown          = require('metalsmith-markdown');
 var contentful        = require('contentful-metalsmith');
 var marked            = require('marked');
 var path              = require("path");
+var fs                = require('fs');
 
 
+//handle bars helpers
 handlebars.registerHelper("slugify", function(input) {
     var output = input.toLowerCase();
     // return output.replace(" ", "-");
@@ -27,6 +29,11 @@ handlebars.registerHelper("slugify", function(input) {
 handlebars.registerHelper('marked', function (text) {
   return marked(text);
 })
+
+
+//handlebars partials
+handlebars.registerPartial('header', fs.readFileSync(__dirname + '/layouts/partials/header.html').toString());
+
 
 
 Metalsmith(__dirname)         // __dirname defined by node.js:

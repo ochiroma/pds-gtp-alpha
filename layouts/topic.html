@@ -1,10 +1,4 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>{{data.fields.topic}}</title>
-</head>
-<body>
+{{> header title=data.fields.topic }}
 <h1>{{data.fields.topic}}</h1>
 
 {{{marked data.fields.topicDescriptor}}}
