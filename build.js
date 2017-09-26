@@ -20,7 +20,7 @@ handlebars.registerHelper("slugify", function(input) {
     output = output.replace(/'/g, '');
     output = output.replace(/"/g, '');
     output = output.replace(/,/g, '');
-    output = output.replace(/./g, '');
+    output = output.replace(/\./g, '');
     return output;
 });
 
