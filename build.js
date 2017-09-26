@@ -33,6 +33,7 @@ handlebars.registerHelper('marked', function (text) {
 
 //handlebars partials
 handlebars.registerPartial('header', fs.readFileSync(__dirname + '/layouts/partials/header.html').toString());
+handlebars.registerPartial('footer', fs.readFileSync(__dirname + '/layouts/partials/footer.html').toString());
 
 
 
