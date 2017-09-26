@@ -16,7 +16,12 @@ handlebars.registerHelper("slugify", function(input) {
     var output = input.toLowerCase();
     // return output.replace(" ", "-");
     // var replaced = str.replace(/ /g, '+');
-    return output.replace(/ /g, '-');
+    output = output.replace(/ /g, '-');
+    output = output.replace(/'/g, '');
+    output = output.replace(/"/g, '');
+    output = output.replace(/,/g, '');
+    output = output.replace(/./g, '');
+    return output;
 });
 
 handlebars.registerHelper('marked', function (text) {
