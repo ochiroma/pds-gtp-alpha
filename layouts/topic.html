@@ -3,12 +3,15 @@
   <div class="container">
     <h1>{{data.fields.topic}}</h1>
     {{{marked data.fields.topicDescriptor}}}
+    <a class="btn--primary" href="#" data-type="download" download="">Read the quick guide</a>
+    <a class="btn--primary btn--primary-ghost" href="#" data-type="download" download="">Contact an expert</a>
   </div>
 </div>
 
 <div class="container">
   {{#if data.fields.contacts}}
-  <h2>Speak to an expert</h2>
+  <div id="contact">
+  <h2>Contact an expert</h2>
   <ul>
   {{#each data.fields.contacts }}
     <li>{{fields.contactName}}</li>
@@ -18,10 +21,14 @@
     </ul>
   {{/each}}
   </ul>
+  </div>
   {{/if}}
+
+<div id="quick-guide">
 <h2>{{data.fields.quickGuide.fields.quickGuideTitle}}</h2>
 
 {{{marked data.fields.quickGuide.fields.quickGuideText}}}
+</div>
 
 <h2>Find out about</h2>
   <nav class="navigation--block">
