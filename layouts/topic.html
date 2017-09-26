@@ -23,17 +23,20 @@
 
 {{{marked data.fields.quickGuide.fields.quickGuideText}}}
 
+  <nav class="navigation--block">
   <ul>
     {{#each data.fields.subTopic }}
       <li>
-        <h3>{{fields.subTopic}}</h3>
-        {{#if fields.subTopicDescriptor}}
-        {{{marked fields.subTopicDescriptor}}}
-        {{/if}}
-        <p><a href="{{{slugify fields.subTopic}}}">Read more</a></p>
+        <a href="{{{slugify fields.subTopic}}}">
+          <h3>{{fields.subTopic}}</h3>
+          {{#if fields.subTopicDescriptor}}
+          {{{marked fields.subTopicDescriptor}}}
+          {{/if}}
+        </a>
       </li>
     {{/each}}
     </ul>
+  </nav>
     {{content}}
 </div>
 {{> footer}}
