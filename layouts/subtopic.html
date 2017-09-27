@@ -7,19 +7,6 @@
 </div>
 
 <div class="container">
-  {{#if data.fields.contacts}}
-  <h2>Speak to an expert</h2>
-  <ul>
-  {{#each data.fields.contacts }}
-    <li>{{fields.contactName}}</li>
-    <ul>
-      <li>Email: <a href="mailto:{{fields.emailAddress}}">{{fields.emailAddress}}</a></li>
-      <li>Extension(s){{fields.phoneExtensionNumber}}</li>
-    </ul>
-  {{/each}}
-  </ul>
-  {{/if}}
-
   <h2>On this page</h2>
   <ol>
   {{#each data.fields.stepByStepGuide}}
@@ -39,6 +26,19 @@
   <h2 id="{{{slugify fields.subTopicSectionTitle}}}">{{fields.subTopicSectionTitle}}</h2>
   {{{marked fields.subTopicSectionText}}}
   {{/each}}
+
+  {{#if data.fields.contacts}}
+  <h2>Speak to an expert</h2>
+  <ul>
+  {{#each data.fields.contacts }}
+    <li>{{fields.contactName}}</li>
+    <ul>
+      <li>Email: <a href="mailto:{{fields.emailAddress}}">{{fields.emailAddress}}</a></li>
+      <li>Extension(s){{fields.phoneExtensionNumber}}</li>
+    </ul>
+  {{/each}}
+  </ul>
+  {{/if}}
 </div>
 
 {{> footer}}
