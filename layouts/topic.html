@@ -33,20 +33,6 @@
     {{/each}}
     </ul>
   </nav>
-
-  {{#if data.fields.contacts}}
-  <div id="contact">
-  <h2>Contact an expert</h2>
-  <ul>
-  {{#each data.fields.contacts }}
-    <li>{{fields.contactName}}</li>
-    <ul>
-      <li>Email: <a href="mailto:{{fields.emailAddress}}">{{fields.emailAddress}}</a></li>
-      <li>Extension(s){{fields.phoneExtensionNumber}}</li>
-    </ul>
-  {{/each}}
-  </ul>
-  </div>
-  {{/if}}
+  {{> contact}}
 </div>
 {{> footer}}
