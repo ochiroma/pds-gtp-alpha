@@ -11,6 +11,8 @@ var contentful        = require('contentful-metalsmith');
 var marked            = require('marked');
 var path              = require("path");
 var fs                = require('fs');
+var menu              = require('metalsmith-menu');
+
 
 
 //handle bars helpers
@@ -35,11 +37,21 @@ handlebars.registerHelper('marked', function (text) {
   return marked(text);
 })
 
+handlebars.registerHelper('toJSON', function(object) {
+  return new handlebars.SafeString(JSON.stringify(object));
+});
+
+handlebars.registerHelper("log", function(something) {
+  console.log(something);
+});
+
 
 //handlebars partials
 handlebars.registerPartial('header', fs.readFileSync(__dirname + '/layouts/partials/header.html').toString());
 handlebars.registerPartial('footer', fs.readFileSync(__dirname + '/layouts/partials/footer.html').toString());
 handlebars.registerPartial('contact', fs.readFileSync(__dirname + '/layouts/partials/contact.html').toString());
+handlebars.registerPartial('breadcrumbs', fs.readFileSync(__dirname + '/layouts/partials/breadcrumbs.html').toString());
+
 
 
 
@@ -61,6 +73,7 @@ Metalsmith(__dirname)         // __dirname defined by node.js:
     'space_id' : process.env.CONTENT_SPACE_ID,
     'host': process.env.CONTENT_HOST
   }))
+  .use(menu("menu"))
   .use(markdown())            // transpile all md into html
   .use(layouts({              // wrap layouts around html
     engine: 'handlebars',     // use the layout engine you like
