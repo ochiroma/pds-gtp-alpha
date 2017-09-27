@@ -11,7 +11,6 @@ var contentful        = require('contentful-metalsmith');
 var marked            = require('marked');
 var path              = require("path");
 var fs                = require('fs');
-var menu              = require('metalsmith-menu');
 
 
 
