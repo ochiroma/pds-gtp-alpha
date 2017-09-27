@@ -1,0 +1,14 @@
+{{> header title=data.fields.quickGuideTitle }}
+<div class="section--primary block theme--grey-5">
+  <div class="container">
+    <h1>{{data.fields.quickGuideTitle}}</h1>
+    {{#if data.fields.readTimeInMinutes}}
+    <p>Read time: {{data.fields.readTimeInMinutes}} minutes.</p>
+    {{/if}}
+  </div>
+</div>
+
+<div class="container">
+{{{marked data.fields.quickGuideText}}}
+</div>
+{{> footer}}

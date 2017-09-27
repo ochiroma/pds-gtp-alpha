@@ -3,7 +3,7 @@
   <div class="container">
     <h1>{{data.fields.topic}}</h1>
     {{{marked data.fields.topicDescriptor}}}
-    <a class="btn--primary" href="#">Read the quick guide</a>
+    <a class="btn--primary" href="{{{slugify data.fields.quickGuide.fields.quickGuideTitle}}}">Read the quick guide</a>
     {{#if data.fields.contacts}}
     <a class="btn--primary btn--primary-ghost" href="#contact">Contact an expert</a>
     {{/if}}
