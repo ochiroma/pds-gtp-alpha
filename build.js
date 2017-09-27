@@ -72,7 +72,6 @@ Metalsmith(__dirname)         // __dirname defined by node.js:
     'space_id' : process.env.CONTENT_SPACE_ID,
     'host': process.env.CONTENT_HOST
   }))
-  .use(menu("menu"))
   .use(markdown())            // transpile all md into html
   .use(layouts({              // wrap layouts around html
     engine: 'handlebars',     // use the layout engine you like
