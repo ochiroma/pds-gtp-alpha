@@ -1,14 +1,39 @@
 {{> header title=data.fields.topic }}
-<div class="section--primary">
+<div class="section--primary block theme--grey-4">
   <div class="container">
     <h1>{{data.fields.topic}}</h1>
     {{{marked data.fields.topicDescriptor}}}
-    <a class="btn--primary" href="#" data-type="download" download="">Read the quick guide</a>
-    <a class="btn--primary btn--primary-ghost" href="#" data-type="download" download="">Contact an expert</a>
+    <a class="btn--primary" href="#">Read the quick guide</a>
+    {{#if data.fields.contacts}}
+    <a class="btn--primary btn--primary-ghost" href="#contact">Contact an expert</a>
+    {{/if}}
   </div>
 </div>
 
 <div class="container">
+
+{{!-- <div id="quick-guide">
+<h2>{{data.fields.quickGuide.fields.quickGuideTitle}}</h2>
+
+{{{marked data.fields.quickGuide.fields.quickGuideText}}}
+</div> --}}
+
+<h2>Find out about</h2>
+  <nav class="navigation--block section-split">
+  <ul>
+    {{#each data.fields.subTopic }}
+      <li>
+        <a href="{{{slugify fields.subTopic}}}">
+          <h3>{{fields.subTopic}}</h3>
+          {{#if fields.subTopicDescriptor}}
+          {{{marked fields.subTopicDescriptor}}}
+          {{/if}}
+        </a>
+      </li>
+    {{/each}}
+    </ul>
+  </nav>
+
   {{#if data.fields.contacts}}
   <div id="contact">
   <h2>Contact an expert</h2>
@@ -23,28 +48,5 @@
   </ul>
   </div>
   {{/if}}
-
-<div id="quick-guide">
-<h2>{{data.fields.quickGuide.fields.quickGuideTitle}}</h2>
-
-{{{marked data.fields.quickGuide.fields.quickGuideText}}}
-</div>
-
-<h2>Find out about</h2>
-  <nav class="navigation--block">
-  <ul>
-    {{#each data.fields.subTopic }}
-      <li>
-        <a href="{{{slugify fields.subTopic}}}">
-          <h3>{{fields.subTopic}}</h3>
-          {{#if fields.subTopicDescriptor}}
-          {{{marked fields.subTopicDescriptor}}}
-          {{/if}}
-        </a>
-      </li>
-    {{/each}}
-    </ul>
-  </nav>
-    {{content}}
 </div>
 {{> footer}}

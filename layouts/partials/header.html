@@ -4,9 +4,40 @@
   <meta charset="utf-8">
   <link rel="stylesheet" type="text/css" href="https://parliament-uk-pugin.herokuapp.com/stylesheets/main.css">
   <style type="text/css">
+	
+  /*overrides*/
+	.btn--primary {
+		border: 2px solid transparent !important;
+	}
+
+	.btn--primary-ghost {
+		background: transparent !important;
+		border: 2px solid #2B57AB !important;
+	}
+
+	.btn--primary-ghost:link, .btn--primary-ghost:visited {
+		color: #2B57AB !important;
+	}
+
+	.btn--primary-ghost:hover {
+		background: #d2dff7 !important;
+	}
+
+	.section--primary {
+		padding-top: 42px;
+		padding-bottom: 50px;
+	}
+
+	.section--primary p {
+		font-size: 1.5rem;
+	}
+
+
+
+	/*custom based on existing*/
 	.navigation--block ul {
 		padding: 0;
-		margin: 30px 0;
+		margin: 42px 0;
 		/*overflow: hidden;*/
 		display: flex;
 		flex-wrap: wrap;
@@ -59,21 +90,12 @@
 		margin-top: 0;
 	}
 
-	.btn--primary {
-		border: 2px solid transparent;
-	}
 
-	.btn--primary-ghost {
-		background: transparent;
-		border: 2px solid #2B57AB;
-	}
 
-	.btn--primary-ghost:link {
-		color: #2B57AB;
-	}
-
-	.btn--primary-ghost:hover {
-		background: #d2dff7;
+	/*custom*/
+	#contact {
+		border-top: 1px solid #ccc;
+		padding-bottom: 42px;
 	}
 	
   </style>
