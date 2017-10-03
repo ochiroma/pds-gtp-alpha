@@ -1,0 +1,50 @@
+{{> header title=data.fields.subTopic }}
+<div class="section--primary block theme--grey-4">
+  <div class="container">
+
+  {{> breadcrumbs}}
+  {{#*inline "breadcrumbs-block"}}
+  <li><a href="/questions/">Questions</a> &gt;</li>
+  <li>{{data.fields.subTopic}}</li>
+  {{/inline}}
+
+    <div class="hero-popular-content">
+    <h1>{{data.fields.subTopic}}</h1>
+    {{{marked data.fields.subTopicDescriptor}}}
+    </div>
+    <div class="hero-popular-cta">
+      <nav>
+      <h2>How to guides</h2>
+        <ul>
+          {{#each data.fields.stepByStepGuide}}
+          <li><a href="../{{{slugify fields.stepByStepGuideTitle}}}">{{fields.stepByStepGuideTitle}}</a></li>
+          {{/each}}
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <h2>On this page</h2>
+  <ol>
+  
+  {{#each data.fields.subTopicSection}}
+  <li><a href="#{{{slugify fields.subTopicSectionTitle}}}">{{fields.subTopicSectionTitle}}</a></li>
+  {{/each}}
+  </ol>
+
+  {{#each data.fields.stepByStepGuide}}
+  <h2 id="{{{slugify fields.stepByStepGuideTitle}}}">{{fields.stepByStepGuideTitle}}</h2>
+  {{{marked fields.stepByStepGuideSteps}}}
+  {{/each}}
+
+  {{#each data.fields.subTopicSection}}
+  <h2 id="{{{slugify fields.subTopicSectionTitle}}}">{{fields.subTopicSectionTitle}}</h2>
+  {{{marked fields.subTopicSectionText}}}
+  {{/each}}
+
+  {{> contact}}
+</div>
+
+{{> footer}}

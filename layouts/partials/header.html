@@ -7,6 +7,11 @@
   <style type="text/css">
 	
   /*overrides*/
+
+  	.container {
+  		max-width: 979px;
+  	}
+
 	.btn--primary {
 		border: 2px solid transparent !important;
 	}
@@ -27,11 +32,19 @@
 	.section--primary {
 		padding-top: 21px;
 		padding-bottom: 50px;
+		overflow: hidden;
 	}
 
 	.section--primary p {
 		font-size: 1.5rem;
 	}
+
+
+	/*@media (min-width: 768px) {
+		.section--primary p, .section--primary h1 {
+			margin-right: 35%;
+		}
+	}*/
 
 
 
@@ -111,6 +124,21 @@
 		padding: 0;
 		list-style: none;
 		display: inline-block;
+	}
+
+
+
+	.hero-popular-content {
+		width: 66%;
+		float: left;
+	}
+
+
+	.hero-popular-cta {
+		width: 33%;
+		float: right;
+		border: 1px solid #373151;
+		padding: 30px 30px 45px 30px ;
 	}
 	
   </style>
