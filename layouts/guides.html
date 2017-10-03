@@ -17,10 +17,11 @@
 
 <div class="container">
 
+  {{#each data.entries }}
+  <h2>{{ fields.topic }}</h2>
   <nav class="navigation--block section-split">
   <ul>
-    {{#each data.entries }}
-    
+
     {{#each fields.subTopic }}
     {{#if fields.stepByStepGuide}}
     
@@ -34,9 +35,10 @@
     {{/each}}
     {{/if}}
     {{/each}}
-    {{/each}}
+    
     </ul>
   </nav>
+  {{/each}}
   {{> contact}}
 </div>
 {{> footer}}
