@@ -1,0 +1,42 @@
+{{> header title="How to guides" }}
+<div class="section--primary block theme--grey-4">
+  <div class="container">
+  
+  {{> breadcrumbs}}
+  {{#*inline "breadcrumbs-block"}}
+  <li>How to guides</li>
+  {{/inline}}
+
+    <h1>How to guides</h1>
+
+  </div>
+</div>
+
+{{!--log data.entries--}}
+{{!--log data.entries.fields.stepByStepGuideTitle--}}
+
+<div class="container">
+
+  <nav class="navigation--block section-split">
+  <ul>
+    {{#each data.entries }}
+    
+    {{#each fields.subTopic }}
+    {{#if fields.stepByStepGuide}}
+    
+    {{#each fields.stepByStepGuide }}
+    
+      <li>
+        <a href="../{{{slugify ../../fields.topic}}}/{{{slugify ../fields.subTopic}}}/{{{slugify fields.stepByStepGuideTitle}}}">
+          {{fields.stepByStepGuideTitle}}
+        </a>
+      </li>
+    {{/each}}
+    {{/if}}
+    {{/each}}
+    {{/each}}
+    </ul>
+  </nav>
+  {{> contact}}
+</div>
+{{> footer}}
