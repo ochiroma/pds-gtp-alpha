@@ -2,23 +2,6 @@
 <div class="section--primary block theme--grey-4">
   <div class="container">
 
-{{!-- 
-{{ancestry}}
-{{log ancestry.parent.ancestry.path}}
-
-{{#each ancestry.parent}}
-{{log this}}
-{{log "---"}}
-{{/each}}
-
-{{log path }}
-{{relative_path path "b/index.html" }}
-
-{{log ancestry.parent.ancestry.parent.path }}
---}}
-
-
-
   {{> breadcrumbs}}
 
     <div class="hero-popular-content">
@@ -30,7 +13,7 @@
       <h2>How to guides</h2>
         <ul>
           {{#each data.fields.stepByStepGuide}}
-          <li><a href="../{{{slugify fields.stepByStepGuideTitle}}}">{{fields.stepByStepGuideTitle}}</a></li>
+          <li><a href="{{{slugify fields.title}}}">{{fields.title}}</a></li>
           {{/each}}
         </ul>
       </nav>
