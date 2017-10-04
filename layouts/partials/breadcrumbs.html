@@ -1,9 +1,33 @@
-<nav class="breadcrumbs">
-  <ul>
-    <li><a href="/">MPs guide to procedure</a> &gt;</li>
-    {{#> breadcrumbs-block}}
-      {{!-- Custom <li> breadcrumbs per template to be added. --}}
-    {{/breadcrumbs-block}}
-  </ul>
-</nav>
 
+<nav class="breadcrumbs">
+<ul>
+
+{{!-- Level 3  --}}
+{{#if this.ancestry.parent.ancestry.parent.ancestry.parent}}
+<li><a href="/{{cleanURL this.ancestry.parent.ancestry.parent.ancestry.parent.path}}">{{this.ancestry.parent.ancestry.parent.ancestry.parent.data.fields.title}}</a> &gt;</li>
+
+
+{{/if}}
+
+{{!-- Level 2  --}}
+{{#if this.ancestry.parent.ancestry.parent}}
+<li><a href="/{{cleanURL this.ancestry.parent.ancestry.parent.path}}">{{this.ancestry.parent.ancestry.parent.data.fields.title}}</a> &gt;</li>
+
+{{/if}}
+
+
+{{!-- Level 1  --}}
+{{#if ancestry.parent}}
+<li><a href="/{{cleanURL this.ancestry.parent.path}}">{{this.ancestry.parent.data.fields.title}}</a> &gt;</li>
+
+
+{{/if}}
+{{#if data.fields.title}}
+<li>{{data.fields.title}}</li>
+{{/if}}
+
+
+{{#> breadcrumbs-block}}
+{{/breadcrumbs-block}}
+</ul>
+</nav>

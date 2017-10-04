@@ -3,10 +3,6 @@
   <div class="container">
 
   {{> breadcrumbs}}
-  {{#*inline "breadcrumbs-block"}}
-  <li><a href="/questions/">Questions</a> &gt;</li>
-  <li>{{data.fields.subTopic}}</li>
-  {{/inline}}
 
     <h1>{{data.fields.subTopic}}</h1>
     {{{marked data.fields.subTopicDescriptor}}}

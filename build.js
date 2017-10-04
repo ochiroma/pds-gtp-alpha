@@ -9,9 +9,36 @@ var layouts           = require('metalsmith-layouts');
 var markdown          = require('metalsmith-markdown');
 var contentful        = require('contentful-metalsmith');
 var marked            = require('marked');
-var path              = require("path");
+var path              = require('path');
 var fs                = require('fs');
+// var dirHierarchy      = require('metalsmith-directory-hierarchy');
+var ancestry = require("metalsmith-ancestry");
+var links = require("metalsmith-relative-links");
 
+
+// sets all file's metadata to have its file path set to `path`
+var filePathTask = function(files, metalsmith, done){
+    for(var file in files){
+        files[file].path = file;
+    }
+    done();
+};
+
+var relativePathHelper = function(current, target) {
+    // normalize and remove starting slash
+    current = path.normalize(current).slice(0);
+    target = path.normalize(target).slice(0);
+
+
+
+    current = path.dirname(current);
+    var out = path.relative(current, target);
+console.log(current);
+    return out;
+
+};
+
+handlebars.registerHelper('relative_path', relativePathHelper);
 
 
 //handle bars helpers
@@ -31,6 +58,14 @@ handlebars.registerHelper("slugify", function(input) {
     output = output.replace(/:/g, '');
     return output;
 });
+
+handlebars.registerHelper("cleanURL", function(input) {
+    var output = input.toLowerCase();
+    output = output.replace(/index\.html/g, '');
+    return output;
+});
+
+
 
 handlebars.registerHelper('marked', function (text) {
   return marked(text);
@@ -73,6 +108,17 @@ Metalsmith(__dirname)         // __dirname defined by node.js:
     'host': process.env.CONTENT_HOST
   }))
   .use(markdown())            // transpile all md into html
+  // .use(links())
+  .use(ancestry({
+    ancestryProperty: "ancestry",
+    match: "**/*"
+    // "test" : /\.md?$/
+  }))
+  // .use(function(files, metalsmith, done){
+  //       for(var file in files){
+  //           file.path = file;
+  //       }})
+  .use(filePathTask)
   .use(layouts({              // wrap layouts around html
     engine: 'handlebars',     // use the layout engine you like
   }))

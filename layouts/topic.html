@@ -1,13 +1,10 @@
-{{> header title=data.fields.topic }}
+{{> header title=data.fields.title }}
 <div class="section--primary block theme--grey-4">
   <div class="container">
   
   {{> breadcrumbs}}
-  {{#*inline "breadcrumbs-block"}}
-  <li>{{data.fields.topic}}</li>
-  {{/inline}}
 
-    <h1>{{data.fields.topic}}</h1>
+    <h1>{{data.fields.title}}</h1>
     {{{marked data.fields.topicDescriptor}}}
     <a class="btn--primary" href="{{{slugify data.fields.quickGuide.fields.quickGuideTitle}}}">Read the quick guide</a>
     {{#if data.fields.contacts}}
