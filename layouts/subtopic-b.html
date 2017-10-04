@@ -26,23 +26,15 @@
 </div>
 
 <div class="container">
-  <h2>On this page</h2>
-  <ol>
+  <h2>In this section</h2>
+  <nav class="navigation--block section-split">
+  <ul>
   
   {{#each data.fields.subTopicSection}}
   <li><a href="#{{{slugify fields.subTopicSectionTitle}}}">{{fields.subTopicSectionTitle}}</a></li>
   {{/each}}
-  </ol>
-
-  {{#each data.fields.stepByStepGuide}}
-  <h2 id="{{{slugify fields.stepByStepGuideTitle}}}">{{fields.stepByStepGuideTitle}}</h2>
-  {{{marked fields.stepByStepGuideSteps}}}
-  {{/each}}
-
-  {{#each data.fields.subTopicSection}}
-  <h2 id="{{{slugify fields.subTopicSectionTitle}}}">{{fields.subTopicSectionTitle}}</h2>
-  {{{marked fields.subTopicSectionText}}}
-  {{/each}}
+  </ul>
+  </nav>
 
   {{> contact}}
 </div>
