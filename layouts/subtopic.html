@@ -11,17 +11,17 @@
 
 <div class="container">
   <h2>On this page</h2>
-  <ol>
+  <ul>
   {{#each data.fields.stepByStepGuide}}
-  <li><a href="#{{{slugify fields.stepByStepGuideTitle}}}">{{fields.stepByStepGuideTitle}}</a></li>
+  <li><a href="#{{{slugify fields.stepByStepGuideTitle}}}">Step by step: {{fields.stepByStepGuideTitle}}</a></li>
   {{/each}}
   {{#each data.fields.subTopicSection}}
   <li><a href="#{{{slugify fields.subTopicSectionTitle}}}">{{fields.subTopicSectionTitle}}</a></li>
   {{/each}}
-  </ol>
+  </ul>
 
   {{#each data.fields.stepByStepGuide}}
-  <h2 id="{{{slugify fields.stepByStepGuideTitle}}}">{{fields.stepByStepGuideTitle}}</h2>
+  <h2 id="{{{slugify fields.stepByStepGuideTitle}}}">Step by step: {{fields.stepByStepGuideTitle}}</h2>
   {{{marked fields.stepByStepGuideSteps}}}
   {{/each}}
 
