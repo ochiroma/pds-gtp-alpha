@@ -1,3 +1,27 @@
 {{> header title=data.fields.title }}
-{{data.fields.title}}
+<div class="section--primary block theme--grey-4">
+  <div class="container">
+  
+  {{> breadcrumbs}}
+
+    <h1>{{data.fields.title}}</h1>
+    {{{marked data.fields.description}}}
+  </div>
+</div>
+
+<div class="container">
+
+
+  <nav class="navigation--block section-split">
+  <ul>
+      <li>
+        <a href="questions">Questions</a>
+      </li>
+      <li>
+        <a href="questions">Guides</a>
+      </li>
+    </ul>
+  </nav>
+</div>
+
 {{> footer}}
