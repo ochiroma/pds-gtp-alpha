@@ -1,13 +1,10 @@
-{{> header title=data.fields.quickGuideTitle }}
+{{> header title=data.fields.title }}
 <div class="section--primary block theme--grey-5">
   <div class="container">
 
   {{> breadcrumbs}}
-	{{#*inline "breadcrumbs-block"}}
-	<li>{{data.fields.quickGuideTitle}}</li>
-	{{/inline}}
 
-    <h1>{{data.fields.quickGuideTitle}}</h1>
+    <h1>{{data.fields.title}}</h1>
     {{#if data.fields.readTimeInMinutes}}
     <p>Read time: {{data.fields.readTimeInMinutes}} minutes.</p>
     {{/if}}
@@ -15,6 +12,6 @@
 </div>
 
 <div class="container content">
-{{{marked data.fields.quickGuideText}}}
+{{{marked data.fields.subTopicSectionText}}}
 </div>
 {{> footer}}
