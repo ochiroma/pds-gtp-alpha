@@ -3,6 +3,9 @@
   <div class="container">
 
   {{> breadcrumbs}}
+	{{#*inline "breadcrumbs-block"}}
+	<li>{{data.fields.quickGuideTitle}}</li>
+	{{/inline}}
 
     <h1>{{data.fields.quickGuideTitle}}</h1>
     {{#if data.fields.readTimeInMinutes}}
