@@ -4,9 +4,10 @@
   
   {{> breadcrumbs}}
 
-    <h1>{{data.fields.title}}</h1>
-    {{{marked data.fields.topicDescriptor}}}
-    <a class="btn--primary" href="{{{slugify data.fields.quickGuide.fields.quickGuideTitle}}}">Read the quick guide</a>
+    <h1>Parliamentary {{data.fields.title}}</h1>
+    <!-- {{{marked data.fields.topicDescriptor}}} -->
+    <p>You can ask a Minister a question in person in the Chamber, or submit a written question. Questions must be about something the Minister is responsible for and must press for action or seek information.  You or your staff can submit a question online or fill in a form and take it to the Table Office or Procedural Hub.</p>
+    <a class="btn--primary" href="#">Launch E-tabling</a>
     {{#if data.fields.contacts}}
     <a class="btn--primary btn--primary-ghost" href="#contact">Contact an expert</a>
     {{/if}}
@@ -21,18 +22,23 @@
 {{{marked data.fields.quickGuide.fields.quickGuideText}}}
 </div> --}}
 
-<h2 id="find-out-about">Find out about</h2>
-  <nav class="navigation--block section-split">
-  <ul>
+<h2 id="find-out-about">Types of question</h2>
+  <nav class="section-split">
+  <ul class="tiles">
       
     {{#each data.fields.subTopic }}
-      <li>
+      <li class="tiles--tile">
         <a href="{{{slugify fields.title}}}">
           <h3>{{fields.title}}</h3>
-          {{#if fields.subTopicDescriptor}}
-          {{{marked fields.subTopicDescriptor}}}
-          {{/if}}
         </a>
+        {{#if fields.tasks}}
+          {{{marked fields.tasks}}}
+        
+        <a href="{{{slugify fields.title}}}">
+          More
+        </a>
+
+        {{/if}}
       </li>
     {{/each}}
 

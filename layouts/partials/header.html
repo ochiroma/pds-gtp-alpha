@@ -72,7 +72,7 @@
 
 
 	/*custom based on existing*/
-	.navigation--block ul {
+	.navigation--block ul, .tiles {
 		padding: 0;
 		margin: 42px 0;
 		/*overflow: hidden;*/
@@ -81,7 +81,7 @@
 
 	}
 
-	.navigation--block li {
+	.navigation--block li, .tiles--tile {
 		list-style: none;
 		float: left;
 		flex: 1;
@@ -89,8 +89,12 @@
 		max-width: 32%;
 		margin-right: 15px;
 		margin-bottom: 15px;
+		background: #fff;
 		/*border: 1px solid #ccc;*/
-		
+	}
+
+	.tiles--tile {
+		padding: 15px;
 	}
 
 	.navigation--block li a {
@@ -125,6 +129,10 @@
 	}
 
 	.navigation--block li:nth-child(3n+3) {  
+		margin-right: 0;
+	}
+
+	.tiles-tile:nth-child(3n+3) {  
 		margin-right: 0;
 	}
 

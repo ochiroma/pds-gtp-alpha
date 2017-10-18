@@ -43,6 +43,7 @@ handlebars.registerHelper('relative_path', relativePathHelper);
 
 //handle bars helpers
 handlebars.registerHelper("slugify", function(input) {
+  if(input){
     var output = input.toLowerCase();
     // return output.replace(" ", "-");
     // var replaced = str.replace(/ /g, '+');
@@ -57,12 +58,15 @@ handlebars.registerHelper("slugify", function(input) {
     output = output.replace(/!/g, '');
     output = output.replace(/:/g, '');
     return output;
+  }
 });
 
 handlebars.registerHelper("cleanURL", function(input) {
+  if(input){
     var output = input.toLowerCase();
     output = output.replace(/index\.html/g, '');
     return output;
+  }
 });
 
 handlebars.registerHelper('if_eq', function(a, b, opts) {
