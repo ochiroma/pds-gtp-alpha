@@ -22,7 +22,7 @@
 {{{marked data.fields.quickGuide.fields.quickGuideText}}}
 </div> --}}
 
-<h2 id="find-out-about">Types of question</h2>
+<h2 id="find-out-about">In this section</h2>
   <nav class="section-split">
   <ul class="tiles">
       
@@ -30,15 +30,16 @@
       <li class="tiles--tile">
         <a href="{{{slugify fields.title}}}">
           <h3>{{fields.title}}</h3>
+          {{#if fields.subTopicDescriptor}}
+          {{{marked fields.subTopicDescriptor}}}
+          {{/if}}
         </a>
         {{#if fields.tasks}}
           {{{marked fields.tasks}}}
-        
-        <a href="{{{slugify fields.title}}}">
-          More
-        </a>
-
         {{/if}}
+        <ul><li>
+          <a class="more" href="{{{slugify fields.title}}}">More</a>
+        </li></ul>
       </li>
     {{/each}}
 

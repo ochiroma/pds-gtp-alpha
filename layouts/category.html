@@ -5,21 +5,45 @@
   {{> breadcrumbs}}
 
     <h1>{{data.fields.title}}</h1>
-    {{{marked data.fields.description}}}
+    {{{marked data.fields.description}}} 
+    <!-- <p>Browse <a href="#topics">topics</a> or <a href="#guides">practical guides</a></p> -->
   </div>
 </div>
 
 <div class="container">
+<h2>Topics</h2>
+
+  <nav class="section-split">
+  <ul class="tiles">
+  {{#each data.fields.topics }}
+  	<li class="tiles--tile">
+        <a href="{{{slugify fields.title}}}" class="tiles--link-block {{#if fields.tasks}}height-auto{{/if}}">
+          <h3>{{fields.title}}</h3>
+          {{#if fields.topicDescriptor}}
+          {{{marked fields.topicDescriptor}}}
+          {{/if}}
+        </a>
+        
+        {{#if fields.tasks}}
+        <div class="tiles--tasks">
+          {{{marked fields.tasks}}}
+          <ul>
+          	<li><a href="{{{slugify fields.title}}}"">More</a></li>
+          </ul>
+        </div>
+        {{/if}}
+        
+   	</li>
+  {{/each}}
 
 
-  <nav class="navigation--block section-split">
-  <ul>
-      <li>
+
+<!--       <li>
         <a href="questions">Questions</a>
       </li>
       <li>
         <a href="guides">Guides</a>
-      </li>
+      </li> -->
     </ul>
   </nav>
 </div>

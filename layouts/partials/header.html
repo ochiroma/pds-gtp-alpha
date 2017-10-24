@@ -94,7 +94,91 @@
 	}
 
 	.tiles--tile {
+		/*padding: 15px;*/
+		background: #625A75;
+	}
+
+	.tiles--tile a.tiles--link-block {
+		display: block;
 		padding: 15px;
+		/*margin: -15px;*/
+		text-decoration: none !important;
+		color: #fff !important;
+		background: #373151;
+		height: 100%;
+	}
+
+	.tiles--tile a.tiles--link-block h3 {
+		color: #fff;
+	}
+
+	.tiles--tile a.tiles--link-block p {
+		margin: 0;
+	}
+
+	.tiles--tile .tiles--tasks {
+		margin: 0;
+		padding: 0px 15px 15px 15px;
+		background: #625A75;
+		color: #fff !important;
+	}
+
+	.tiles--tile .tiles--tasks ul {
+		margin: 0;
+		padding-left: 15px;
+		position: relative;
+	}
+
+	.tiles--tile .tiles--tasks li {
+		list-style: none;
+	}
+
+	.tiles--tile .tiles--tasks li:before {
+		content: "\00BB \0020";
+		position: absolute;
+		left: 0;
+	}
+
+
+	.tiles--tile .tiles--tasks a {
+		color: #fff !important;
+		text-decoration: underline !important;
+	}
+
+	.tiles--tile h3 {
+		margin: 0;
+	}
+
+	.tiles--tile a {
+		color: #2B57AB !important;
+		text-decoration: none !important;
+	}
+
+	.tiles--tile h3 a {
+		background: #d2dff7;
+		display: block;
+		color: #373151 !important;
+		margin: -15px -15px 15px -15px;
+		padding: 15px
+	}
+
+	.tiles--tile a:hover {
+		text-decoration: underline !important;
+	}
+
+	.tiles--tile ul  {
+		/*margin-top: 30px;*/
+		margin-bottom: 0;
+	}
+
+	.tiles--tile ul li {
+		margin-top: 8px;
+	}
+
+	.more {
+		/*margin-left: 18px;
+		margin-top: 5px;*/
+		font-weight: bold;
 	}
 
 	.navigation--block li a {
@@ -106,12 +190,13 @@
 		background: #fff;
 	}
 
-	.navigation--block li a:hover {
+	.navigation--block li a:hover, .tiles--tile a.tiles--link-block:hover {
 		background: #2B57AB;
-		color: #fff;
+		color: #fff !important;
+		text-decoration: none !important;
 	}
 
-	.navigation--block li a:hover h3{
+	.navigation--block li a:hover h3, .tiles--tile a.tiles--link-block:hover h3{
 		color: #fff;
 	}
 
@@ -119,7 +204,7 @@
 		.navigation--block ul {
 			display: block;
 		}
-		.navigation--block li {
+		.navigation--block li, .tiles--tile {
 			min-width: 100%;
 			max-width: 100%;
 			margin-right: 0;
@@ -173,7 +258,8 @@
 	.hero-popular-cta {
 		width: 33%;
 		float: right;
-		border: 1px solid #373151;
+		/*border: 1px solid #DFF4EB;
+		background: #96DCBE;*/
 		padding: 30px 30px 45px 30px;
 	}
 
@@ -206,6 +292,10 @@
 		.content {
 			padding-right: 416px;
 		}
+	}
+
+	.height-auto {
+		height: auto !important;
 	}
 	
   </style>
