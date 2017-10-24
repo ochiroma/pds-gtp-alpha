@@ -1,0 +1,60 @@
+{{> header title=data.fields.title }}
+<div class="section--primary block theme--grey-4">
+  <div class="container">
+  
+  {{> breadcrumbs}}
+
+    <h1>{{data.fields.title}}</h1>
+    <!-- {{{marked data.fields.topicDescriptor}}} -->
+    <p>You can ask a Minister a question in person in the Chamber, or submit a written question. Questions must be about something the Minister is responsible for and must press for action or seek information.  You or your staff can submit a question online or fill in a form and take it to the Table Office or Procedural Hub.</p>
+    <a class="btn--primary" href="#">Launch E-tabling</a>
+    {{#if data.fields.contacts}}
+    <a class="btn--primary btn--primary-ghost" href="#contact">Contact an expert</a>
+    {{/if}}
+  </div>
+</div>
+
+<div class="container">
+
+{{!-- <div id="quick-guide">
+<h2>{{data.fields.quickGuide.fields.quickGuideTitle}}</h2>
+
+{{{marked data.fields.quickGuide.fields.quickGuideText}}}
+</div> --}}
+
+{{#if data.fields.tasks}}
+<h2 id="popular">Popular</h2>
+<nav class="navigation--block section-split">
+{{{marked data.fields.tasks}}}
+</nav>
+<hr>
+{{/if}}
+<h2 id="find-out-about">In this section</h2>
+  <nav class="navigation--block section-split">
+  <ul>
+      
+    {{#each data.fields.subTopic }}
+      <li>
+        <a href="{{{slugify fields.title}}}">
+          <h3>{{fields.title}}</h3>
+          {{#if fields.subTopicDescriptor}}
+          {{{marked fields.subTopicDescriptor}}}
+          {{/if}}
+        </a>
+      </li>
+    {{/each}}
+
+      <li>
+        <a href="oral-questions/b.html">
+          <h3>Oral questions (B)</h3>
+          {{#if data.fields.subTopic.[0].fields.subTopicDescriptor}}
+          {{{marked data.fields.subTopic.[0].fields.subTopicDescriptor}}}
+          {{/if}}
+        </a>
+      </li>
+
+    </ul>
+  </nav>
+  {{> contact}}
+</div>
+{{> footer}}
