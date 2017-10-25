@@ -1,15 +1,19 @@
 {{> header title=data.fields.title }}
-<div class="section--primary block theme--grey-4">
+<div class="section--primary block theme--grey-5">
   <div class="container">
   
   {{> breadcrumbs}}
 
     <h1>{{data.fields.title}}</h1>
-    <p>Read time: {{data.fields.readTimeInMinutes}} minutes.</p>
+    {{{marked data.fields.audience}}}
+    <!-- <p>Read time: {{data.fields.readTimeInMinutes}} minutes.</p> -->
   </div>
 </div>
 
 <div class="container content">
+	<div class="status--highlight theme--mint">
+	{{{marked data.fields.message}}}
+	</div>
 	{{{marked data.fields.stepByStepGuideSteps}}}
 	<h2>What next?</h2>
 	<ul>
