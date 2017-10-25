@@ -7,7 +7,7 @@
 	<li>{{data.fields.quickGuideTitle}}</li>
 	{{/inline}}
 
-    <h1>{{data.fields.quickGuideTitle}}</h1>
+    <h1><span class="productlabel">{{> productlabel}}</span>{{data.fields.quickGuideTitle}}</h1>
     {{#if data.fields.readTimeInMinutes}}
     <p>Read time: {{data.fields.readTimeInMinutes}} minutes.</p>
     {{/if}}

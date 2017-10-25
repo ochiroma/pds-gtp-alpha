@@ -99,6 +99,7 @@ handlebars.registerPartial('footer', fs.readFileSync(__dirname + '/layouts/parti
 handlebars.registerPartial('contact', fs.readFileSync(__dirname + '/layouts/partials/contact.html').toString());
 handlebars.registerPartial('breadcrumbs', fs.readFileSync(__dirname + '/layouts/partials/breadcrumbs.html').toString());
 handlebars.registerPartial('siblings-nav', fs.readFileSync(__dirname + '/layouts/partials/siblings-nav.html').toString());
+handlebars.registerPartial('productlabel', fs.readFileSync(__dirname + '/layouts/partials/productlabel.html').toString());
 
 
 

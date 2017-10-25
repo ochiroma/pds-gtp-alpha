@@ -4,7 +4,7 @@
   
   {{> breadcrumbs}}
 
-    <h1>{{data.fields.title}}</h1>
+    <h1><span class="productlabel">{{> productlabel}}</span>{{data.fields.title}}</h1>
     {{{marked data.fields.audience}}}
     <!-- <p>Read time: {{data.fields.readTimeInMinutes}} minutes.</p> -->
   </div>
