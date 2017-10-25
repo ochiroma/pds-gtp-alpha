@@ -13,7 +13,7 @@
   <h2>On this page</h2>
   <ul>
   {{#each data.fields.stepByStepGuide}}
-  <li><a href="#{{{slugify fields.stepByStepGuideTitle}}}">Step by step: {{fields.stepByStepGuideTitle}}</a></li>
+  <li><a href="#{{{slugify fields.title}}}">Step by step: {{fields.title}}</a></li>
   {{/each}}
   {{#each data.fields.subTopicSection}}
   <li><a href="#{{{slugify fields.subTopicSectionTitle}}}">{{fields.subTopicSectionTitle}}</a></li>
@@ -21,7 +21,7 @@
   </ul>
 
   {{#each data.fields.stepByStepGuide}}
-  <h2 id="{{{slugify fields.stepByStepGuideTitle}}}">Step by step: {{fields.stepByStepGuideTitle}}</h2>
+  <h2 id="{{{slugify fields.title}}}">Step by step: {{fields.title}}</h2>
   {{{marked fields.stepByStepGuideSteps}}}
   {{/each}}
 
