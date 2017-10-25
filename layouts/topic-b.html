@@ -25,21 +25,23 @@
 <h2 id="find-out-about">In this section</h2>
   <nav class="section-split">
   <ul class="tiles">
-      
     {{#each data.fields.subTopic }}
       <li class="tiles--tile">
-        <a href="{{{slugify fields.title}}}">
+        <a href="{{{slugify fields.title}}}" class="tiles--link-block {{#if fields.tasks}}height-auto{{/if}}">
           <h3>{{fields.title}}</h3>
           {{#if fields.subTopicDescriptor}}
           {{{marked fields.subTopicDescriptor}}}
           {{/if}}
         </a>
+
         {{#if fields.tasks}}
+        <div class="tiles--tasks">
           {{{marked fields.tasks}}}
+          <ul>
+           <li><a href="{{{slugify fields.title}}}">More</a></li>
+          </ul>
+        </div>
         {{/if}}
-        <ul><li>
-          <a class="more" href="{{{slugify fields.title}}}">More</a>
-        </li></ul>
       </li>
     {{/each}}
 

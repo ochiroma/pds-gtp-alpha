@@ -1,5 +1,5 @@
 ---
 contentful:
   entry_id: 3GxCRXDuCkEsC6eOWEoEmy
-layout: topic.html
+layout: topic-b.html
 ---
