@@ -5,12 +5,25 @@
   {{> breadcrumbs}}
 
     <h1><span class="productlabel">{{> productlabel}}</span>{{data.fields.title}}</h1>
-    <!-- {{{marked data.fields.topicDescriptor}}} -->
-    <p>You can ask a Minister a question in person in the Chamber, or submit a written question. Questions must be about something the Minister is responsible for and must press for action or seek information.  You or your staff can submit a question online or fill in a form and take it to the Table Office or Procedural Hub.</p>
+    
+    <div class="dropdown">
+    <div class="dropdown__intro inline">
+    {{{marked data.fields.topicDescriptor}}}
+    </div>
+    <div class="dropdown__toggle inline">
+    <p class="inline"><a href="#none" class="inline read-more-dots">[Continue reading]</a></p>
+    </div>
+    <div class="dropdown__content">
+    {{{marked data.fields.quickGuide.fields.quickGuideText}}}
+    </div>
+    </div>
+    <!-- <p>You can ask a Minister a question in person in the Chamber, or submit a written question. Questions must be about something the Minister is responsible for and must press for action or seek information.  You or your staff can submit a question online or fill in a form and take it to the Table Office or Procedural Hub.</p> -->
+
     <a class="btn--primary" href="#">Launch E-tabling</a>
     {{#if data.fields.contacts}}
     <a class="btn--primary btn--primary-ghost" href="#contact">Contact an expert</a>
     {{/if}}
+    
   </div>
 </div>
 
