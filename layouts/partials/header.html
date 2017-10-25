@@ -100,12 +100,32 @@
 
 	.tiles--tile a.tiles--link-block {
 		display: block;
-		padding: 15px;
+		padding:  15px 45px 15px 15px;
 		/*margin: -15px;*/
 		text-decoration: none !important;
 		color: #fff !important;
 		background: #373151;
 		height: 100%;
+		position: relative;
+	}
+
+	.tiles--tile a.tiles--link-block:before {
+		content: ">";
+		font-size: 2rem;
+		line-height: 3.6rem;
+		text-align: center;
+		position: absolute;
+		right: 0px;
+		top: 0px;
+		/*bottom: 45%;*/
+		width: 30px;
+		height: 60px;
+		background: #625A75;
+		/*background: #214282;*/
+	}
+
+	.tiles--tile a.tiles--link-block:hover::before {
+		background: #214282;
 	}
 
 	.tiles--tile a.tiles--link-block h3 {
@@ -134,7 +154,7 @@
 	}
 
 	.tiles--tile .tiles--tasks li:before {
-		content: "\00BB \0020";
+		content: ">";
 		position: absolute;
 		left: 0;
 	}
@@ -142,7 +162,7 @@
 
 	.tiles--tile .tiles--tasks a {
 		color: #fff !important;
-		text-decoration: underline !important;
+		/*text-decoration: underline !important;*/
 	}
 
 	.tiles--tile h3 {
