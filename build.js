@@ -79,7 +79,9 @@ handlebars.registerHelper('if_eq', function(a, b, opts) {
 
 
 handlebars.registerHelper('marked', function (text) {
-  return marked(text);
+  if(text){
+    return marked(text);
+  }
 })
 
 handlebars.registerHelper('toJSON', function(object) {
