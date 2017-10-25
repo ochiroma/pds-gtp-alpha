@@ -13,10 +13,13 @@
 	{{{marked data.fields.stepByStepGuideSteps}}}
 	<h2>What next?</h2>
 	<ul>
-		{{#if_eq data.fields.stepByStepGuideTitle "Ask an oral question"}}
-		<li>Read other <a href="../b.html#in-this-section">topics in this section</a></li>
-		{{/if_eq}}
+		{{#if ancestry.parent}}
+		<li>Back to <a href="/{{cleanURL this.ancestry.parent.path}}">{{this.ancestry.parent.data.fields.title}}</a></li>
+		{{/if}}
 		<li>Read other <a href="/guides">how to guides</a></li>
+		{{#if this.ancestry.parent.ancestry.parent.ancestry.parent}}
+		<li>Read other <a href="/{{cleanURL this.ancestry.parent.ancestry.parent.ancestry.parent.path}}#topics">{{this.ancestry.parent.ancestry.parent.ancestry.parent.data.fields.title}} topics</a></li>
+		{{/if}}
 	</ul>
   {{> contact}}
 </div>
