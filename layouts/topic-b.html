@@ -28,7 +28,11 @@
     {{#each data.fields.subTopic }}
       <li class="tiles--tile">
         <a href="{{{slugify fields.title}}}" class="tiles--link-block {{#if fields.tasks}}height-auto{{/if}}">
+          {{#if fields.linkTitle}}
+          <h3>{{fields.linkTitle}}</h3>
+          {{else}}
           <h3>{{fields.title}}</h3>
+          {{/if}}
           {{#if fields.subTopicDescriptor}}
           {{{marked fields.subTopicDescriptor}}}
           {{/if}}
