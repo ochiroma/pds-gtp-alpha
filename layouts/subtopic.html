@@ -34,16 +34,18 @@
   {{#each data.fields.subTopicSection}}
   <h2 id="{{{slugify fields.subTopicSectionTitle}}}">{{fields.subTopicSectionTitle}}</h2>
   {{{marked fields.subTopicSectionText}}}
-  {{/each}}
 
-  {{#if data.fields.video}}
-  <h2 id="{{{slugify data.fields.video.fields.title}}}">{{data.fields.video.fields.title}}</h2>
+  {{#if fields.video}}
+  <h3 id="{{{slugify fields.video.fields.title}}}">{{fields.video.fields.title}}</h3>
   <div class="video-wrapper">
-  <iframe src="{{data.fields.video.fields.url}}" id="UKPPlayer" name="UKPPlayer" title="UK Parliament Player" seamless="seamless" frameborder="0" allowfullscreen class="video-iframe"></iframe>
-  <!-- <iframe src="{{data.fields.video.fields.url}}" id="UKPPlayer" name="UKPPlayer" title="UK Parliament Player" seamless="seamless" frameborder="0" allowfullscreen style="width:100%;height:100%;"></iframe> -->
+  <iframe src="{{fields.video.fields.url}}" id="UKPPlayer" name="UKPPlayer" title="UK Parliament Player" seamless="seamless" frameborder="0" allowfullscreen class="video-iframe"></iframe>
   </div>
 
   {{/if}}
+
+  {{/each}}
+
+  
 
   
 </div>

@@ -13,6 +13,15 @@
 
 <div class="container content">
 {{{marked data.fields.subTopicSectionText}}}
+
+{{#if data.fields.video}}
+<h2 id="{{{slugify data.fields.video.fields.title}}}">{{data.fields.video.fields.title}}</h3>
+<div class="video-wrapper">
+<iframe src="{{data.fields.video.fields.url}}" id="UKPPlayer" name="UKPPlayer" title="UK Parliament Player" seamless="seamless" frameborder="0" allowfullscreen class="video-iframe"></iframe>
+</div>
+
+{{/if}}
+
 <h2>What next?</h2>
   <ul>
     <li>Read other <a href="../b.html#in-this-section">topics in this section</a></li>
